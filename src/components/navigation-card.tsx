@@ -18,7 +18,7 @@ export const NavigationCard = ({ title = '', screen }: NavigationCardProps) => {
   return (
     <Pressable
       style={tailwind(
-        'flex-row items-center justify-between p-4 bg-gray-800 rounded-lg',
+        'flex-row items-center justify-between p-4 bg-gray-800 rounded-lg mb-4',
       )}
       onPress={_handleNavigation}>
       <Text style={tailwind('text-secondary-200')}>{title}</Text>

@@ -1,4 +1,4 @@
-import { Main, MarkdownEditorModules } from '../modules';
+import { Main, MarkdownEditorModules, ParallaxHeaderModules } from '@/modules';
 import { ROUTES, RoutesConfig } from './routes.model';
 
 export const routesConfig: RoutesConfig[] = [
@@ -9,5 +9,9 @@ export const routesConfig: RoutesConfig[] = [
   {
     name: ROUTES.MARK_DOWN_EDITOR,
     component: MarkdownEditorModules,
+  },
+  {
+    name: ROUTES.PARALLAX_HEADER,
+    component: ParallaxHeaderModules,
   },
 ];

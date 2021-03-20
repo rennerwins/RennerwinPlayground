@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationCard } from '@/components';
 import { ROUTES, ROUTES_NAME } from '@/routes';
 import { tailwind } from '@/tailwind';
-import { FlatList, StatusBar, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 
 const Main = () => {
   const _keyExtractor = (item: string) => item;
@@ -16,7 +16,6 @@ const Main = () => {
 
   return (
     <View style={tailwind('flex-1 bg-gray-900')}>
-      <StatusBar backgroundColor="#111827" />
       <FlatList
         contentContainerStyle={tailwind('p-4')}
         data={Object.keys(ROUTES)}
