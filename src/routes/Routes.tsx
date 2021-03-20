@@ -13,6 +13,13 @@ const Routes = () => {
             key={route.name}
             name={route.name}
             component={route.component}
+            options={{
+              headerStyle: {
+                backgroundColor: '#111827',
+                elevation: 0,
+              },
+              headerTintColor: '#667EEA',
+            }}
           />
         );
       })}
