@@ -5,7 +5,6 @@ import {
   StyleSheet,
   TextInput,
   View,
-  Keyboard,
   StatusBar,
 } from 'react-native';
 import Markdown from 'react-native-markdown-display';
