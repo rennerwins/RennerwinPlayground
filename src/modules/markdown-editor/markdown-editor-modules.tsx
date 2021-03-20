@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Markdown from 'react-native-markdown-display';
 import Icon from 'react-native-vector-icons/Feather';
-import tailwind from 'tailwind-rn';
+import { tailwind } from '@/tailwind';
 
 const MarkdownEditorModules = () => {
   const navigation = useNavigation();
@@ -61,10 +61,8 @@ const MarkdownEditorModules = () => {
             <Pressable style={tailwind('flex-1')} onPress={handleEditorFocus}>
               <Markdown
                 style={{
-                  body: tailwind('px-4 text-gray-300'),
-                  heading1: { color: '#667EEA' },
-                  code_block: { color: '#667EEA', fontSize: 20 },
-                  cone_inline: { color: '#667EEA', fontSize: 20 },
+                  body: tailwind('px-4 text-primary w-full'),
+                  heading1: tailwind('text-primary w-full'),
                 }}>
                 {markdown}
               </Markdown>

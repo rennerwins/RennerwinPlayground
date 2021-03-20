@@ -1,17 +1,28 @@
-import { useNavigation } from '@react-navigation/core';
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
-import { MainNavigationProp, ROUTES } from '../../routes';
+import { NavigationCard } from '@/components';
+import { ROUTES, ROUTES_NAME } from '@/routes';
+import { tailwind } from '@/tailwind';
+import { FlatList, StatusBar, View } from 'react-native';
 
 const Main = () => {
-  const navigation = useNavigation<MainNavigationProp>();
+  const _keyExtractor = (item: string) => item;
 
-  const handleNavigation = () => navigation.navigate(ROUTES.MARK_DOWN_EDITOR);
+  const _renderListItem = ({ item }: { item: string }) => {
+    if (item === ROUTES.MAIN) {
+      return null;
+    }
+    return <NavigationCard title={ROUTES_NAME[item]} screen={item} />;
+  };
 
   return (
-    <View>
-      <Text>Main</Text>
-      <Button title="Mark down editor" onPress={handleNavigation} />
+    <View style={tailwind('flex-1 bg-gray-900')}>
+      <StatusBar backgroundColor="#111827" />
+      <FlatList
+        contentContainerStyle={tailwind('p-4')}
+        data={Object.keys(ROUTES)}
+        renderItem={_renderListItem}
+        keyExtractor={_keyExtractor}
+      />
     </View>
   );
 };

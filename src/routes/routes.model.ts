@@ -3,12 +3,16 @@ import { StackNavigationProp } from '@react-navigation/stack';
 export interface RoutesConfig {
   name: string;
   component: React.ComponentType<any>;
-  showHeader?: boolean;
 }
 
+export const ROUTES_NAME: { [key: string]: string } = {
+  MAIN: 'Main',
+  MARK_DOWN_EDITOR: 'Mark Down Editor',
+};
+
 export enum ROUTES {
-  MAIN = 'Main',
-  MARK_DOWN_EDITOR = 'Mark Down Editor',
+  MAIN = 'MAIN',
+  MARK_DOWN_EDITOR = 'MARK_DOWN_EDITOR',
 }
 
 export type RootStackParamList = {
